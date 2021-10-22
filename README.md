@@ -6,9 +6,8 @@
 <p align="center">Projeto desenvolvido com o objetivo de ser apresentado como solução para o desafio proposto pela M2 Center para preenchimento de vaga de desenvolver web back-end.
 </p>
 
-## Criando o banco de dados
-
-Para criação do banco de dados, execute:
+## Banco de dados
+Crei um banco de dados MySql e em seguida execute execute:
 
 
 ```php artisan migrate```
