@@ -75,7 +75,6 @@ class CampanhasController extends Controller
                 return response()->json('Sucesso!');
             }
         }catch(Exception $e) {
-            return response()->json($e->getMessage());
             return response()->json("Erro ao cadastrar produtos da campanha!");
         }
     }
