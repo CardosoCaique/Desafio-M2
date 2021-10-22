@@ -26,7 +26,7 @@ class CreateCampanhasProdutosTable extends Migration
                 ->on('produtos')
                 ->onDelete('cascade');
             $table->unsignedBigInteger('desconto_id')
-                ->delete();
+                ->nullable();
             $table->foreign('desconto_id')
                 ->references('id')
                 ->on('descontos')

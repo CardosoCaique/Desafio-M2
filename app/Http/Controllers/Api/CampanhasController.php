@@ -20,8 +20,8 @@ class CampanhasController extends Controller
     public function store(Request $request, Campanha $campanha)
     {
         try {
-            if(Campanha::where('grupo_id', $request->input('grupo_id'))->first())
-                return response()->json("Esse grupo já possui uma campanha ativa!");
+            /*if(Campanha::where('grupo_id', $request->input('grupo_id'))->first())
+                return response()->json("Esse grupo já possui uma campanha ativa!");*/
 
             $campanha = Campanha::create([
                 "grupo_id" => $request->input('grupo_id'),
@@ -75,6 +75,7 @@ class CampanhasController extends Controller
                 return response()->json('Sucesso!');
             }
         }catch(Exception $e) {
+            return response()->json($e->getMessage());
             return response()->json("Erro ao cadastrar produtos da campanha!");
         }
     }
