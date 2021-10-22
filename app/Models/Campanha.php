@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Campanha extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'grupo_id',
+        'identificacao',
+        'descricao',
+        'status'
+    ];
+
+    public function grupo()
+    {
+        return $this->belongsTo(Grupo::class, 'grupo_id');
+    }
 }

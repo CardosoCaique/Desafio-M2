@@ -21,7 +21,7 @@ class CreateCampanhasTable extends Migration
                 ->references('id')
                 ->on('grupos')
                 ->onDelete('set null');
-            $table->string('identificaco');
+            $table->string('identificacao');
             $table->text('descricao')
                 ->nullable();
             $table->enum('status', ['ativo', 'inativo']);
@@ -31,11 +31,13 @@ class CreateCampanhasTable extends Migration
         Schema::create('descontos', function (Blueprint $table) {
             $table->id();
             $table->float('valor');
+            $table->timestamps();
         });
 
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->timestamps();
         });
     }
 
